@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zephora</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .logo img {
+        width: 100px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* REMOVE UNDERLINE */
+      nav a {
+        text-decoration: none;
+      }
+
+      /* HERO BACKGROUND SLIDER */
+      .hero {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        transition: background-image 1s ease-in-out;
+      }
+
+      /* FADED BACKGROUND FOR NEXT SECTION */
+      .section {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("bg2.jpg") center/cover no-repeat;
+        opacity: 0.08; /* faded look */
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img src="logo.png" />
+        <span>ZEPHORA INNOVATIONS</span>
+      </div>
+
+      <nav>
+        <a>Home</a>
+        <a href="#internships">Internships</a>
+        <a href="#" onclick="openModal()">Services</a>
+        <a href="#" onclick="openAbout()">About Us</a>
+        <a href="https://wa.me/919446533009" target="_blank">Contact</a>
+      </nav>
+
+      <button class="apply" onclick="scrollToInternships()">Apply Now</button>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <h1>
+          Build <span>Real Skills.</span><br />
+          Work on Real Projects.
+        </h1>
+
+        <p>Project-Based Internships for Engineering Students</p>
+
+        <div class="buttons">
+          <button class="primary" onclick="scrollToInternships()">
+            Apply Now
+          </button>
+          <button class="secondary" onclick="scrollToInternships()">
+            View Programs
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="" />
+      </div>
+    </section>
+
+    <section class="center section">
+      <h2>What We Do</h2>
+      <p>
+        At Zephora Innovations, we offer <span>project-based</span> internships
+        where you work on real-world applications and gain industry-ready
+        skills.
+      </p>
+    </section>
+
+    <section class="section" id="internships">
+      <h2 class="center">Our Internship Domains</h2>
+
+      <div class="cards">
+        <div class="card" onclick="openApp()">App Development</div>
+        <div class="card" onclick="openWeb()">Web Development</div>
+        <div class="card" onclick="openUI()">Java Internship</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Kickstart Your Career with Zephora!</h2>
+      <button class="primary" onclick="scrollToInternships()">
+        Apply for Internship
+      </button>
+    </section>
+
+    <!-- CONTACT QR SECTION -->
+    <section class="contact-section">
+      <div class="qr-card">
+        <div class="qr-logo">
+          <img src="logo.png" alt="logo" />
+        </div>
+
+        <h2>ZEPHORA INNOVATIONS</h2>
+        <p class="link">wa.me/919446533009</p>
+        <p class="sub">WhatsApp Business Account</p>
+
+        <img src="qr.png" class="qr-img" alt="QR Code" />
+
+        <p class="scan">Scan to start a chat with us</p>
+      </div>
+    </section>
+
+    <!-- SERVICES MODAL -->
+    <div id="servicesModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Our Services</h2>
+
+        <div class="service-cards">
+          <div class="service-card">
+            <h3>💻 Web Development</h3>
+            <p>Modern responsive websites for businesses.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>📱 App Development</h3>
+            <p>High-performance Android & iOS apps.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>🎨 UI/UX Design</h3>
+            <p>Clean, engaging and user-friendly designs.</p>
+          </div>
+
+          <div class="service-card highlight">
+            <h3>🎓 Internships</h3>
+            <p>Work on real projects and build portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT MODAL -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeAbout()">&times;</span>
+
+        <h2>About Us</h2>
+
+        <p class="about-text">
+          Zephora Innovations is a student-focused tech company dedicated to
+          bridging the gap between academic learning and industry skills. We
+          offer project-based internships in app development, web development,
+          and UI/UX design, where students work on real-world applications under
+          expert guidance. Our mission is to help students gain practical
+          experience, build strong portfolios, and become industry-ready
+          professionals.
+        </p>
+      </div>
+    </div>
+
+    <!-- APP DEVELOPMENT MODAL -->
+    <div id="appModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeApp()">&times;</span>
+
+        <h2>App Development - 10 Day Program</h2>
+
+        <p class="about-text">
+          Day 1 – Introduction & Setup<br />
+          Day 2 – UI Basics<br />
+          Day 3 – Layout & Design<br />
+          Day 4 – Navigation<br />
+          Day 5 – State Management<br />
+          Day 6 – API Integration<br />
+          Day 7 – Local Storage<br />
+          Day 8 – UI/UX Enhancement<br />
+          Day 9 – Project Building<br />
+          Day 10 – Final Project & Deployment
+        </p>
+
+        <button
+          class="primary"
+          style="margin-top: 20px"
+          onclick="window.open('https://forms.gle/3eNgXkwyFuU5PWce7', '_blank')"
+        >
+          Apply Now
+        </button>
+      </div>
+    </div>
+    <!-- WEB DEVELOPMENT MODAL -->
+    <div id="webModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeWeb()">&times;</span>
+
+        <h2>Web Development - 10 Day Program</h2>
+
+        <p class="about-text">
+          Day 1 – HTML Basics<br />
+          Day 2 – CSS Styling<br />
+          Day 3 – Flexbox & Layout<br />
+          Day 4 – Responsive Design<br />
+          Day 5 – JavaScript Basics<br />
+          Day 6 – DOM Manipulation<br />
+          Day 7 – Forms & Validation<br />
+          Day 8 – Mini Project<br />
+          Day 9 – Portfolio Website<br />
+          Day 10 – Deployment
+        </p>
+
+        <button
+          class="primary"
+          style="margin-top: 20px"
+          onclick="window.open('https://forms.gle/3eNgXkwyFuU5PWce7', '_blank')"
+        >
+          Apply Now
+        </button>
+      </div>
+    </div>
+    <!-- Java Internship MODAL -->
+    <div id="uiModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUI()">&times;</span>
+
+        <h2>Java Internship - 10 Day Program</h2>
+
+        <p class="about-text">
+          Day 1 – Java Introduction & Setup <br />
+          Day 2 – Variables & Data Types <br />
+          Day 3 – Loops & Functions<br />
+          Day 4 – Object Oriented Programming <br />Day 5 – Arrays & Strings
+          <br />Day 6 – Exception Handling <br />Day 7 – Collections Framework
+          <br />Day 8 – JDBC & Database Connection <br />Day 9 – Mini Project
+          Development <br />Day 10 – Final Project & Interview Prep
+        </p>
+
+        <button
+          class="primary"
+          style="margin-top: 20px"
+          onclick="window.open('https://forms.gle/3eNgXkwyFuU5PWce7', '_blank')"
+        >
+          Apply Now
+        </button>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <section class="footer">
+      <h3>ZEPHORA INNOVATIONS</h3>
+
+      <p>Email: zephorainnovations@gmail.com</p>
+      <p>Phone: +91 9446533009</p>
+      <p>Instagram: @zephorainnovations</p>
+
+      <p class="copyright">© 2026 Zephora Innovations. All rights reserved.</p>
+    </section>
+    <script>
+      function openModal() {
+        document.getElementById("servicesModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("servicesModal").style.display = "none";
+      }
+
+      function openAbout() {
+        document.getElementById("aboutModal").style.display = "flex";
+      }
+
+      function closeAbout() {
+        document.getElementById("aboutModal").style.display = "none";
+      }
+
+      function openApp() {
+        document.getElementById("appModal").style.display = "flex";
+      }
+
+      function closeApp() {
+        document.getElementById("appModal").style.display = "none";
+      }
+
+      function openWeb() {
+        document.getElementById("webModal").style.display = "flex";
+      }
+
+      function closeWeb() {
+        document.getElementById("webModal").style.display = "none";
+      }
+
+      function openUI() {
+        document.getElementById("uiModal").style.display = "flex";
+      }
+
+      function closeUI() {
+        document.getElementById("uiModal").style.display = "none";
+      }
+
+      function scrollToInternships() {
+        document
+          .getElementById("internships")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      window.onclick = function (event) {
+        const services = document.getElementById("servicesModal");
+        const about = document.getElementById("aboutModal");
+        const app = document.getElementById("appModal");
+        const web = document.getElementById("webModal");
+        const ui = document.getElementById("uiModal");
+
+        if (event.target === services) services.style.display = "none";
+        if (event.target === about) about.style.display = "none";
+        if (event.target === app) app.style.display = "none";
+        if (event.target === web) web.style.display = "none";
+        if (event.target === ui) ui.style.display = "none";
+      };
+      // HERO IMAGE SLIDER
+      const images = ["bg1.jpg", "bg2.jpg", "bg3.jpg"];
+
+      let index = 0;
+      const hero = document.getElementById("hero");
+
+      function changeBackground() {
+        hero.style.backgroundImage = `url('${images[index]}')`;
+        index = (index + 1) % images.length;
+      }
+
+      // initial load
+      changeBackground();
+
+      // change every 4 seconds
+      setInterval(changeBackground, 4000);
+    </script>
+  </body>
+</html>
